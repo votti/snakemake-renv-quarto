@@ -11,7 +11,7 @@ rule render_quarto_report_base_env:
     input:
         input_txt="results/input/{project}.txt",
         # technical inputs
-        renv="./restored.Rprofile",
+        renv="restored.Rprofile",
         script="workflow/quarto/report_example.qmd",
     output:
         # This will be the name/path of the rendered html report
