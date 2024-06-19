@@ -45,9 +45,9 @@ rule render_quarto_report_second_env:
         script="workflow/quarto/report_example.qmd",
     output:
         # This will be the name/path of the rendered html report
-        report="results/report/{project}_report.qmd",
+        report="results/report/{project}_report_second.qmd",
         # Output files
-        output_txt="results/test/{project}_test.txt",
+        output_txt="results/test/{project}_second.txt",
     resources:
         mem_mb="8000",
     shell:

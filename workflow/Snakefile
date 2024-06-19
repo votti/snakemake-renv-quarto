@@ -9,3 +9,9 @@ container: "docker://condaforge/miniforge3"
 
 include: "rules/renv.smk"
 include: "rules/quarto_examples.smk"
+
+
+rule all:
+    input:
+        "results/report/test_report_base.qmd",
+        "results/report/test2_report_second.qmd",
