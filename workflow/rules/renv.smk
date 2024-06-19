@@ -7,12 +7,14 @@ rule restore_renv:
     conda:
         "../envs/quarto_r.yaml"
     input:
-        "{renv_dir}.Rprofile",
-        "{renv_dir}renv.lock",
+        rprofile="{renv_dir}.Rprofile",
+        lock="{renv_dir}renv.lock",
     output:
-        "{renv_dir}restored.Rprofile",
+        restored="{renv_dir}restored.Rprofile",
+    log:
+        "logs/renv/{renv_dir}_restore.log",
     shell:
         """
-        R -e 'source("{input[0]}", chdir=TRUE);renv::restore()'
-        echo 'source("{input[0]}", chdir=TRUE)' > {output[0]}
+        R -e 'source("{input.rprofile}", chdir=TRUE);renv::restore()'
+        echo 'source("{input.rprofile}", chdir=TRUE)' > {output.restored}
         """

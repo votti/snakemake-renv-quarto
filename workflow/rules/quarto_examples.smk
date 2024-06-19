@@ -18,6 +18,8 @@ rule render_quarto_report_base_env:
         report="results/report/{project}_report_base.qmd",
         # Output files
         output_txt="results/test/{project}_base.txt",
+    log:
+        "logs/quarto/{project}_base.log",
     resources:
         mem_mb="8000",
     shell:
@@ -48,6 +50,8 @@ rule render_quarto_report_second_env:
         report="results/report/{project}_report_second.qmd",
         # Output files
         output_txt="results/test/{project}_second.txt",
+    log:
+        "logs/quarto/{project}_second.log",
     resources:
         mem_mb="8000",
     shell:
