@@ -3,3 +3,10 @@ resources/**
 logs/**
 .snakemake
 .snakemake/**
+
+/.quarto/
+.conda
+.cache
+.condarc
+restored.Rprofile
+**/restored.Rprofile

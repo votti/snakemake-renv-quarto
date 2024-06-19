@@ -1,0 +1,21 @@
+---
+title: "Quarto example: `r params$project`"
+author: "Vito"
+format: html
+params:
+  input_txt: '../results/test.txt'
+  output_txt: '../results/test_copy.txt'
+  project: 'Test'
+  renv: NULL
+---
+
+## An example for a quarto report `r params$project`
+```{r}
+#| label: Load data.table as lib only availabe in the renv`
+library(data.table)
+```
+
+```{r}
+#| label: copy example file
+file.copy(params$input_txt, params$output_txt)
+```
