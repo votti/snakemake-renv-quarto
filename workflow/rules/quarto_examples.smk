@@ -1,6 +1,8 @@
 rule example_input:
     output:
         "results/input/{project}.txt",
+    log:
+        "logs/example_input/{project}.log",
     shell:
         "echo 'This is the project {wildcards.project}' > {output}"
 
