@@ -7,6 +7,5 @@ logs/**
 /.quarto/
 .conda
 .cache
-.condarc
 restored.Rprofile
 **/restored.Rprofile
